@@ -1,7 +1,6 @@
 # Nirbhay Kwatra Portfolio Website
 
 ## Featured Projects
----
 - Uncharted 4 Level Design [comprehensive breakdown]
 - Unreal Tournament Multiplayer Map [comprehensive breakdown]
 - Three Curse Meal Mechanics
