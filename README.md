@@ -20,8 +20,13 @@
 - BCIT
 	- Unreal Tools
 	- Unreal "Game Art" Level Design (add UI, maybe create more of the level, polish and create a playable demo)
+
+- Team Projects
+  	- The Surfacing (Global Game Jam Vancouver 2025)
+  		- Bubble Mechanic
+  	   	- Character Movement
 - Personal Projects [comprehensive breakdown]
 	- Fog of War
 	- Talia's Tavern
-  - LVS Bot
+  	- LVS Bot
 	- Scrounge up whatever you can find
