@@ -71,7 +71,7 @@ a:hover {
   /*
    * Property styles in unhighlighted state.
    */
-  .school {
+  .property {
     align-items: center;
     background-color: #FFFFFF;
     border-radius: 50%;
@@ -88,7 +88,7 @@ a:hover {
     width: 30px;
   }
   
-  .school::after {
+  .property::after {
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
     border-top: 9px solid #FFFFFF;
@@ -103,43 +103,43 @@ a:hover {
     z-index: 1;
   }
   
-  .school .icon {
+  .property .icon {
     align-items: center;
     display: flex;
     justify-content: center;
     color: #FFFFFF;
   }
   
-  .school .icon svg {
+  .property .icon svg {
     height: 20px;
     width: auto;
   }
   
-  .school .details {
+  .property .details {
     display: none;
     flex-direction: column;
     flex: 1;
   }
   
-  .school .address {
+  .property .address {
     color: #9E9E9E;
     font-size: 10px;
     margin-bottom: 10px;
     margin-top: 5px;
   }
 
-  .school .description {
+  .property .description {
     color: #9E9E9E;
   }
   
-  .school .features {
+  .property .features {
     align-items: flex-end;
     display: flex;
     flex-direction: row;
     gap: 10px;
   }
   
-  .school .features > div {
+  .property .features > div {
     align-items: center;
     background: #F5F5F5;
     border-radius: 5px;
@@ -153,7 +153,7 @@ a:hover {
   /*
    * Property styles in highlighted state.
    */
-  .school.highlight {
+  .property.highlight {
     background-color: #FFFFFF;
     border-radius: 8px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
@@ -162,87 +162,87 @@ a:hover {
     width: auto;
   }
   
-  .school.highlight::after {
+  .property.highlight::after {
     border-top: 9px solid #FFFFFF;
   }
   
-  .school.highlight .details {
+  .property.highlight .details {
     display: flex;
   }
   
-  .school.highlight .icon svg {
+  .property.highlight .icon svg {
     width: 50px;
     height: 50px;
   }
   
-  .school .bed {
+  .property .bed {
     color: #FFA000;
   }
   
-  .school .bath {
+  .property .bath {
     color: #03A9F4;
   }
   
-  .school .size {
+  .property .size {
     color: #388E3C;
   }
   
   /*
    * House icon colors.
    */
-  .school.highlight:has(.fa-school) .icon {
+  .property.highlight:has(.fa-school) .icon {
     color: var(--house-color);
   }
   
-  .school:not(.highlight):has(.fa-school) {
+  .property:not(.highlight):has(.fa-school) {
     background-color: var(--house-color);
   }
   
-  .school:not(.highlight):has(.fa-school)::after {
+  .property:not(.highlight):has(.fa-school)::after {
     border-top: 9px solid var(--house-color);
   }
   
   /*
    * Building icon colors.
    */
-  .school.highlight:has(.fa-building) .icon {
+  .property.highlight:has(.fa-building) .icon {
     color: var(--building-color);
   }
   
-  .school:not(.highlight):has(.fa-building) {
+  .property:not(.highlight):has(.fa-building) {
     background-color: var(--building-color);
   }
   
-  .school:not(.highlight):has(.fa-building)::after {
+  .property:not(.highlight):has(.fa-building)::after {
     border-top: 9px solid var(--building-color);
   }
   
   /*
    * Warehouse icon colors.
    */
-  .school.highlight:has(.fa-warehouse) .icon {
+  .property.highlight:has(.fa-warehouse) .icon {
     color: var(--warehouse-color);
   }
   
-  .school:not(.highlight):has(.fa-warehouse) {
+  .property:not(.highlight):has(.fa-warehouse) {
     background-color: var(--warehouse-color);
   }
   
-  .school:not(.highlight):has(.fa-warehouse)::after {
+  .property:not(.highlight):has(.fa-warehouse)::after {
     border-top: 9px solid var(--warehouse-color);
   }
   
   /*
    * Shop icon colors.
    */
-  .school.highlight:has(.fa-shop) .icon {
+  .property.highlight:has(.fa-shop) .icon {
     color: var(--shop-color);
   }
   
-  .school:not(.highlight):has(.fa-shop) {
+  .property:not(.highlight):has(.fa-shop) {
     background-color: var(--shop-color);
   }
   
-  .school:not(.highlight):has(.fa-shop)::after {
+  .property:not(.highlight):has(.fa-shop)::after {
     border-top: 9px solid var(--shop-color);
   }

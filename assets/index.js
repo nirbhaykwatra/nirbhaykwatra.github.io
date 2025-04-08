@@ -36,7 +36,7 @@ async function initMap() {
   function buildContent(property) {
     const content = document.createElement("div");
   
-    content.classList.add("school");
+    content.classList.add("property");
     content.innerHTML = `
       <div class="icon">
           <i aria-hidden="true" class="fa fa-icon fa-${property.type}" title="${property.type}"></i>
