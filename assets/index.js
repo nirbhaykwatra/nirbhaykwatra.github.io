@@ -43,7 +43,7 @@ async function initMap() {
           <span class="fa-sr-only">${property.type}</span>
       </div>
       <div class="details">
-          <div class="name">${property.name}</div>
+          <div class="price">${property.name}</div>
           <div class="address">${property.address}</div>
           <div class="district">${property.district}</div>
           <div class="requests">
