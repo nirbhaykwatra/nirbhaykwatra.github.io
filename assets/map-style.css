@@ -127,6 +127,10 @@ a:hover {
     margin-bottom: 10px;
     margin-top: 5px;
   }
+
+  .property .description {
+    color: #9E9E9E;
+  }
   
   .property .features {
     align-items: flex-end;
