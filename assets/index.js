@@ -45,6 +45,7 @@ async function initMap() {
       <div class="details">
           <div class="price">${property.price}</div>
           <div class="address">${property.address}</div>
+          <div class="description">${property.description}</div>
           <div class="features">
           <div>
               <i aria-hidden="true" class="fa fa-bed fa-lg bed" title="bedroom"></i>
