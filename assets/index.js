@@ -70,7 +70,7 @@ async function initMap() {
   const properties = [
     {
       address: "215 Emily St, MountainView, CA",
-      description: "Single family house with modern design",
+      description: "School District 19",
       price: "$ 3,889,000",
       type: "school",
       bed: 5,
