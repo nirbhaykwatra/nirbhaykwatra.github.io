@@ -18,7 +18,7 @@ async function initMap() {
       });
   
       AdvancedMarkerElement.addListener("gmp-click", () => {
-        toggleHighlight(AdvancedMarkerElement, property);
+        toggleHighlight(AdvancedMarkerElement, school);
       });
     }
   }
