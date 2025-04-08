@@ -25,8 +25,16 @@
   	- The Surfacing (Global Game Jam Vancouver 2025)
   		- Bubble Mechanic
   	   	- Character Movement
+
+- UBC Geering Up
+	- Managing AWS Lightsail Wordpress deployment (configuring files using SSH, designing templates using Gutenberg and code editing.)
+	- Creating Unity WebGL games and deploying on static sites
+	- Creating interactive map served via static HTML, CSS and JS.
+	- Managing Route53 DNS records to redirect to different websites.
+
 - Personal Projects [comprehensive breakdown]
 	- Fog of War
 	- Talia's Tavern
   	- LVS Bot
+	- Personal Website (go through the process of learning web dev, deciding on a framework, etc.)
 	- Scrounge up whatever you can find
