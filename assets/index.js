@@ -47,7 +47,6 @@ async function initMap() {
           <div class="address">${property.address}</div>
           <div class="district">${property.district}</div>
           <div class="requests">
-          <p>Requests</p>
           <div>
               <span>${property.requests[0]}</span>
           </div>
