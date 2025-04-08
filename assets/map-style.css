@@ -186,15 +186,15 @@ a:hover {
   /*
    * House icon colors.
    */
-  .property.highlight:has(.fa-house) .icon {
+  .property.highlight:has(.fa-school) .icon {
     color: var(--house-color);
   }
   
-  .property:not(.highlight):has(.fa-house) {
+  .property:not(.highlight):has(.fa-school) {
     background-color: var(--house-color);
   }
   
-  .property:not(.highlight):has(.fa-house)::after {
+  .property:not(.highlight):has(.fa-school)::after {
     border-top: 9px solid var(--house-color);
   }
   
