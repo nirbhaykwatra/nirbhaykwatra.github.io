@@ -72,7 +72,7 @@ async function initMap() {
       address: "215 Emily St, MountainView, CA",
       description: "Single family house with modern design",
       price: "$ 3,889,000",
-      type: "home",
+      type: "school",
       bed: 5,
       bath: 4.5,
       size: 300,
