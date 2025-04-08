@@ -17,7 +17,7 @@ async function initMap() {
         title: property.description,
       });
   
-      AdvancedMarkerElement.addListener("click", () => {
+      AdvancedMarkerElement.addListener("gmp-click", () => {
         toggleHighlight(AdvancedMarkerElement, property);
       });
     }
