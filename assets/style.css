@@ -7,8 +7,9 @@ body {
     color: white;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    height: 75rem;
+    align-items: top;
+    margin-top: 20rem;
+    height: 100%;
 }
 
 .site-title {
