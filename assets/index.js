@@ -195,7 +195,7 @@ async function initMap() {
       type: "school",
       address: "1230 20th St W, North Vancouver, BC",
       district: "School District 44",
-      requests: ["Request 1"],
+      requests: ["Request 1", "Request 2"],
       programs: ["Program 1"],
       position: {
         lat: 49.3280176,
@@ -207,7 +207,7 @@ async function initMap() {
       type: "school",
       address: "3150 Colwood Dr, North Vancouver, BC",
       district: "School District 44",
-      requests: ["Request 1"],
+      requests: ["Request 1", "Request 2"],
       programs: ["Program 1"],
       position: {
         lat: 49.3384867,
@@ -219,7 +219,7 @@ async function initMap() {
       type: "school",
       address: "2605 Larson Rd, North Vancouver, BC",
       district: "School District 44",
-      requests: ["Request 1"],
+      requests: ["Request 1", "Request 2"],
       programs: ["Program 1"],
       position: {
         lat: 49.3333691,
@@ -231,7 +231,7 @@ async function initMap() {
       type: "school",
       address: "641 17th Street West, North Vancouver, BC",
       district: "School District 44",
-      requests: ["Request 1"],
+      requests: ["Request 1", "Request 2"],
       programs: ["Program 1"],
       position: {
         lat: 49.3238414,
