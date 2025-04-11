@@ -49,6 +49,7 @@ async function initMap() {
           <div class="requests">
           <div>
               <span>${property.requests[0]}</span>
+              <span>${property.requests[1]}</span>
           </div>
           </div>
       </div>
