@@ -55,6 +55,7 @@ async function initMap() {
           </div>
       </div>
       `;
+      console.log(`Generated content for school markers.`)
       return content;
     }
   }
