@@ -53,6 +53,7 @@ a:hover {
   /*
    * Optional: Makes the sample page fill the window.
    */
+  html,
   body {
     height: 100%;
     margin: 0;
@@ -79,27 +80,27 @@ a:hover {
     display: flex;
     font-size: 14px;
     gap: 15px;
-    height: 30px;
+    height: 40px;
     justify-content: center;
-    padding: 4px;
+    padding: 10px;
     position: relative;
     position: relative;
     transition: all 0.3s ease-out;
-    width: 30px;
+    width: 40px;
   }
   
   .school::after {
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-top: 9px solid #FFFFFF;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #FFFFFF;
     content: "";
     height: 0;
     left: 50%;
     position: absolute;
     top: 95%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -10%);
     transition: all 0.3s ease-out;
-    width: 0;
+    width: 0px;
     z-index: 1;
   }
   
@@ -111,7 +112,7 @@ a:hover {
   }
   
   .school .icon svg {
-    height: 15px;
+    height: 20px;
     width: auto;
   }
   
@@ -119,6 +120,10 @@ a:hover {
     display: none;
     flex-direction: column;
     flex: 1;
+  }
+
+  .school .name {
+    color: black;
   }
   
   .school .address {
@@ -157,7 +162,7 @@ a:hover {
     background-color: #FFFFFF;
     border-radius: 8px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-    height: 80px;
+    height: 300px;
     padding: 8px 15px;
     width: auto;
   }
