@@ -47,10 +47,7 @@ a:hover {
 /* Map CSS */
 
 :root {
-    --building-color: #FF9800;
-    --house-color: #0288D1;
-    --shop-color: #7B1FA2;
-    --warehouse-color: #558B2F;
+    --school-color: #0288D1;
   }
   
   /*
@@ -114,7 +111,7 @@ a:hover {
   }
   
   .school .icon svg {
-    height: 20px;
+    height: 15px;
     width: auto;
   }
   
@@ -182,13 +179,13 @@ a:hover {
    * House icon colors.
    */
   .school.highlight:has(.fa-school) .icon {
-    color: var(--house-color);
+    color: var(--school-color);
   }
   
   .school:not(.highlight):has(.fa-school) {
-    background-color: var(--house-color);
+    background-color: var(--school-color);
   }
   
   .school:not(.highlight):has(.fa-school)::after {
-    border-top: 9px solid var(--house-color);
+    border-top: 9px solid var(--school-color);
   }
