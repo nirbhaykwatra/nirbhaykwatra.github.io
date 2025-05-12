@@ -10,15 +10,15 @@ async function initMap() {
     });
   
     for (const school of schools) {
-      const AdvancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
+      const SchoolMarker = new google.maps.marker.AdvancedMarkerElement({
         map,
         content: buildContent(school),
         position: school.position,
         title: school.name,
       });
   
-      AdvancedMarkerElement.addListener("gmp-click", () => {
-        toggleHighlight(AdvancedMarkerElement, school);
+      SchoolMarker.addListener("gmp-click", () => {
+        toggleHighlight(SchoolMarker, school);
       });
     }
   }
