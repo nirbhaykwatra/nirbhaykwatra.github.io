@@ -35,15 +35,16 @@ async function initMap() {
   
   function buildContent(property) {
     const content = document.createElement("div");
-  
-    content.classList.add("property");
-    content.innerHTML = `
+
+    if (property.type === "school") {
+      content.classList.add("school");
+      content.innerHTML = `
       <div class="icon">
-          <i aria-hidden="true" class="fa fa-icon fa-${property.type}" title="${property.type}"></i>
-          <span class="fa-sr-only">${property.type}</span>
+          <i aria-hidden="true" class="fa fa-icon fa-school" title="school"></i>
+          <span class="fa-sr-only">school</span>
       </div>
       <div class="details">
-          <div class="price">${property.name}</div>
+          <div class="name">${property.name}</div>
           <div class="address">${property.address}</div>
           <div class="district">${property.district}</div>
           <div class="requests">
@@ -54,7 +55,8 @@ async function initMap() {
           </div>
       </div>
       `;
-    return content;
+      return content;
+    }
   }
 
   const schools = [
