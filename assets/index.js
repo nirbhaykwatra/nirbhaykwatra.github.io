@@ -23,7 +23,7 @@ async function initMap() {
     }
   }
   
-  function toggleHighlight(markerView, property) {
+  function toggleHighlight(markerView, institution) {
     if (markerView.content.classList.contains("highlight")) {
       markerView.content.classList.remove("highlight");
       markerView.zIndex = null;
@@ -33,10 +33,10 @@ async function initMap() {
     }
   }
   
-  function buildContent(property) {
+  function buildContent(institution) {
     const content = document.createElement("div");
 
-    if (property.type === "school") {
+    if (institution.type === "school") {
       content.classList.add("school");
       content.innerHTML = `
       <div class="icon">
@@ -44,13 +44,13 @@ async function initMap() {
           <span class="fa-sr-only">school</span>
       </div>
       <div class="details">
-          <div class="name">${property.name}</div>
-          <div class="address">${property.address}</div>
-          <div class="district">${property.district}</div>
+          <div class="name">${institution.name}</div>
+          <div class="address">${institution.address}</div>
+          <div class="district">${institution.district}</div>
           <div class="requests">
           <div>
-              <span>${property.requests[0]}</span>
-              <span>${property.requests[1]}</span>
+            <button>${institution.requests[0]}</button>
+            <button>${institution.requests[1]}</button>
           </div>
           </div>
       </div>
@@ -58,6 +58,20 @@ async function initMap() {
       console.log(`Generated content for school markers.`)
       return content;
     }
+  }
+
+  function buildSidebar(markerView, institution) {
+    const content = document.createElement("div");
+
+    content.classList.add("sidebar");
+
+    content.innerHTML = `
+    <div class="${institution.type}-details">
+      <h1>${institution.name}</h1>
+    </div>
+    `;
+    console.log(`Generated sidebar.`)
+    return content;
   }
 
   const schools = [

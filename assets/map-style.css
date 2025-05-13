@@ -44,6 +44,13 @@ a:hover {
     justify-items: right;
 }
 
+.sidebar {
+  display: flex;
+  height: 100%;
+  width: 400px;
+  background-color: white;
+}
+
 /* Map CSS */
 
 :root {
@@ -159,6 +166,8 @@ a:hover {
    * Property styles in highlighted state.
    */
   .school.highlight {
+    display: flex;
+    align-items: flex-start;
     background-color: #FFFFFF;
     border-radius: 8px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
