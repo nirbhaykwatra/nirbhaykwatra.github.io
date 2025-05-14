@@ -1,3 +1,4 @@
+let selectedMarker = null;
 async function initMap() {
     // Request needed libraries.
     const { Map } = await google.maps.importLibrary("maps");
@@ -20,7 +21,12 @@ async function initMap() {
       });
   
       SchoolMarker.addListener("gmp-click", () => {
-        toggleHighlight(SchoolMarker, school);
+        if (selectedMarker !== null && selectedMarker !== SchoolMarker) {
+          toggleHighlight(selectedMarker);
+          selectedMarker = SchoolMarker;
+        }
+        toggleHighlight(SchoolMarker);
+        console.log(`Selected marker: ` + selectedMarker);
         buildSidebar(SchoolMarker, sidebar, school);
       });
     }
@@ -34,19 +40,25 @@ async function initMap() {
       });
   
       IndustryMarker.addListener("gmp-click", () => {
-        toggleHighlight(IndustryMarker, industry);
+        if (selectedMarker !== null && selectedMarker !== IndustryMarker) {
+          toggleHighlight(selectedMarker);
+          selectedMarker = IndustryMarker;
+        }
+        toggleHighlight(IndustryMarker);
         buildSidebar(IndustryMarker, sidebar, industry);
       });
     }
   }
   
-  function toggleHighlight(markerView, institution) {
+  function toggleHighlight(markerView) {
     if (markerView.content.classList.contains("highlight")) {
       markerView.content.classList.remove("highlight");
       markerView.zIndex = null;
+      selectedMarker = null;
     } else {
       markerView.content.classList.add("highlight");
       markerView.zIndex = 1;
+      selectedMarker = markerView;
     }
   }
   
@@ -64,12 +76,6 @@ async function initMap() {
           <div class="name">${institution.name}</div>
           <div class="address">${institution.address}</div>
           <div class="district">${institution.district}</div>
-          <div class="requests">
-          <div>
-            <button>${institution.requests[0]}</button>
-            <button>${institution.requests[1]}</button>
-          </div>
-          </div>
       </div>
       `;
       console.log(`Generated content for school markers.`)
@@ -98,11 +104,16 @@ async function initMap() {
     if (markerView.content.classList.contains("highlight")) {
       sidebar.innerHTML = `
       <div class="${institution.type}-sidebar-details">
-        <div class="name">
-          <h2>${institution.name}</h2>
-        </div>
-        <div class="name">
-          <h2>${institution.name}</h2>
+        <div class="${institution.type}-header">
+          <div class="name">
+          <span>${institution.name}</span>
+          </div>
+          <div class="type">
+          <span>${institution.designation}</span>
+          </div>
+          <div class="address">
+          <span>${institution.address}</span>
+          </div>
         </div>
       </div>
       `;
@@ -114,6 +125,7 @@ async function initMap() {
   const schools = [
     {
       name: "Capilano Elementary School",
+      designation: "School",
       type: "school",
       address: "1230 20th St W, North Vancouver, BC",
       district: "School District 44",
@@ -126,6 +138,7 @@ async function initMap() {
     },
     {
       name: "Highlands Elementary School",
+      designation: "School",
       type: "school",
       address: "3150 Colwood Dr, North Vancouver, BC",
       district: "School District 44",
@@ -138,6 +151,7 @@ async function initMap() {
     },
     {
       name: "Larson Elementary School",
+      designation: "School",
       type: "school",
       address: "2605 Larson Rd, North Vancouver, BC",
       district: "School District 44",
@@ -150,6 +164,7 @@ async function initMap() {
     },
     {
       name: "Westview Elementary School",
+      designation: "School",
       type: "school",
       address: "641 17th Street West, North Vancouver, BC",
       district: "School District 44",
@@ -165,6 +180,7 @@ async function initMap() {
   const industryPartners = [
     {
       name: "Elk Valley Resources",
+      designation: "Industry Partner",
       type: "industry",
       address: "565 Michel Creek Rd, Sparwood, BC",
       programs: ["Program 1"],
@@ -175,6 +191,7 @@ async function initMap() {
     },
     {
       name: "BC Wildlife Federation",
+      designation: "Industry Partner",
       type: "industry",
       address: "9706 188 St, Surrey, BC",
       programs: ["Program 1"],
@@ -186,6 +203,7 @@ async function initMap() {
     },
     {
       name: "Entuitive Consulting",
+      designation: "Industry Partner",
       type: "industry",
       address: "1075 W Georgia St Suite 1020, Vancouver, BC",
       programs: ["Program 1"],
@@ -196,6 +214,7 @@ async function initMap() {
     },
     {
       name: "Makers Making Change",
+      designation: "Industry Partner",
       type: "industry",
       address: "3999 Henning Dr #400, Burnaby, BC",
       programs: ["Program 1"],
@@ -206,6 +225,7 @@ async function initMap() {
     },
     {
       name: "Microsoft",
+      designation: "Industry Partner",
       type: "industry",
       address: "725 Granville St Suite 700 Vancouver, BC",
       programs: ["Program 1"],
