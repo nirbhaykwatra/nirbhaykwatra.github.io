@@ -105,6 +105,7 @@ async function initMap() {
       sidebar.innerHTML = `
       <div class="${institution.type}-sidebar-details">
         <div class="${institution.type}-header">
+          <img class="header-image" src="https://images.actiontourguide.com/wp-content/uploads/2023/12/16114522/Beautiful-aerial-view-of-downtown-Vancouver-skyline.jpg">
           <div class="name">
           <span>${institution.name}</span>
           </div>
