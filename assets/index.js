@@ -8,6 +8,8 @@ async function initMap() {
       center,
       mapId: "4504f8b37365c3d0",
     });
+
+    const sidebar = document.querySelector(".sidebar");
   
     for (const school of schools) {
       const SchoolMarker = new google.maps.marker.AdvancedMarkerElement({
@@ -19,6 +21,21 @@ async function initMap() {
   
       SchoolMarker.addListener("gmp-click", () => {
         toggleHighlight(SchoolMarker, school);
+        buildSidebar(SchoolMarker, sidebar, school);
+      });
+    }
+
+    for (const industry of industryPartners) {
+      const IndustryMarker = new google.maps.marker.AdvancedMarkerElement({
+        map,
+        content: buildContent(industry),
+        position: industry.position,
+        title: industry.name,
+      });
+  
+      IndustryMarker.addListener("gmp-click", () => {
+        toggleHighlight(IndustryMarker, industry);
+        buildSidebar(IndustryMarker, sidebar, industry);
       });
     }
   }
@@ -58,20 +75,40 @@ async function initMap() {
       console.log(`Generated content for school markers.`)
       return content;
     }
+
+    if (institution.type === "industry") {
+      content.classList.add("industry");
+      content.innerHTML = `
+      <div class="icon">
+          <i aria-hidden="true" class="fa fa-icon fa-industry" title="industry"></i>
+          <span class="fa-sr-only">industry</span>
+      </div>
+      <div class="details">
+          <div class="name">${institution.name}</div>
+          <div class="address">${institution.address}</div>
+      </div>
+      `;
+      console.log(`Generated content for industry markers.`)
+      return content;
+    }
   }
 
-  function buildSidebar(markerView, institution) {
-    const content = document.createElement("div");
+  function buildSidebar(markerView, sidebar, institution) {
 
-    content.classList.add("sidebar");
-
-    content.innerHTML = `
-    <div class="${institution.type}-details">
-      <h1>${institution.name}</h1>
-    </div>
-    `;
-    console.log(`Generated sidebar.`)
-    return content;
+    if (markerView.content.classList.contains("highlight")) {
+      sidebar.innerHTML = `
+      <div class="${institution.type}-sidebar-details">
+        <div class="name">
+          <h2>${institution.name}</h2>
+        </div>
+        <div class="name">
+          <h2>${institution.name}</h2>
+        </div>
+      </div>
+      `;
+    } else {
+      sidebar.innerHTML = ``;
+    }
   }
 
   const schools = [
@@ -121,6 +158,60 @@ async function initMap() {
       position: {
         lat: 49.3238414,
         lng: -123.0894738
+      }
+    }
+  ]
+
+  const industryPartners = [
+    {
+      name: "Elk Valley Resources",
+      type: "industry",
+      address: "565 Michel Creek Rd, Sparwood, BC",
+      programs: ["Program 1"],
+      position: {
+        lat: 49.743664238353965,
+        lng: -114.8768418788194
+      }
+    },
+    {
+      name: "BC Wildlife Federation",
+      type: "industry",
+      address: "9706 188 St, Surrey, BC",
+      programs: ["Program 1"],
+      position: {
+        lat: 49.178792439098864,
+        lng: -122.70057571001746
+
+      }
+    },
+    {
+      name: "Entuitive Consulting",
+      type: "industry",
+      address: "1075 W Georgia St Suite 1020, Vancouver, BC",
+      programs: ["Program 1"],
+      position: {
+        lat: 49.285945657851165,
+        lng: -123.12216791846
+      }
+    },
+    {
+      name: "Makers Making Change",
+      type: "industry",
+      address: "3999 Henning Dr #400, Burnaby, BC",
+      programs: ["Program 1"],
+      position: {
+        lat: 49.2656145749895,
+        lng: -123.01496378746197
+      }
+    },
+    {
+      name: "Microsoft",
+      type: "industry",
+      address: "725 Granville St Suite 700 Vancouver, BC",
+      programs: ["Program 1"],
+      position: {
+        lat: 49.282238504262544, 
+        lng: -123.11960517823994
       }
     }
   ]
