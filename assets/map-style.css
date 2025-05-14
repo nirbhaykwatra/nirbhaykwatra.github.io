@@ -112,39 +112,46 @@ h1, h2 {
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    padding-left: 10px;
+    
     margin: 0;
     border-bottom: 1px solid #aaaaaa;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   }
 
-  .school-sidebar-details .name {
+  .school-header .header-image {
+    overflow: hidden;
+  }
+
+  .school-header .name {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: fit-content;
     margin-top: 10px;
+    padding-left: 10px;
     margin-bottom: 5px;
     font-family: "Albert Sans", Arial, Helvetica, sans-serif;
     font-size: 1.7rem;
     font-weight: 1000;
   }
 
-  .school-sidebar-details .type {
+  .school-header .type {
     display: flex;
     width: 100%;
     height: fit-content;
     margin-bottom: 10px;
+    padding-left: 10px;
     font-family: "Albert Sans", Arial, Helvetica, sans-serif;
     font-size:medium;
     font-weight: 300;
   }
 
-  .school-sidebar-details .address {
+  .school-header .address {
     display: flex;
     width: 100%;
     height: fit-content;
     margin-bottom: 10px;
+    padding-left: 10px;
     font-family: "Albert Sans", Arial, Helvetica, sans-serif;
     font-size:medium;
     font-weight: 300;
@@ -165,39 +172,45 @@ h1, h2 {
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    padding-left: 10px;
     margin: 0;
     border-bottom: 1px solid #aaaaaa;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   }
 
-  .industry-sidebar-details .name {
+  .industry-header .header-image {
+    overflow: hidden;
+  }
+
+  .industry-header .name {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: fit-content;
     margin-top: 10px;
+    padding-left: 10px;
     margin-bottom: 5px;
     font-family: "Albert Sans", Arial, Helvetica, sans-serif;
     font-size: 1.7rem;
     font-weight: 1000;
   }
 
-  .industry-sidebar-details .type {
+  .industry-header .type {
     display: flex;
     width: 100%;
     height: fit-content;
     margin-bottom: 10px;
+    padding-left: 10px;
     font-family: "Albert Sans", Arial, Helvetica, sans-serif;
     font-size:medium;
     font-weight: 300;
   }
 
-  .industry-sidebar-details .address {
+  .industry-header .address {
     display: flex;
     width: 100%;
     height: fit-content;
     margin-bottom: 10px;
+    padding-left: 10px;
     font-family: "Albert Sans", Arial, Helvetica, sans-serif;
     font-size:medium;
     font-weight: 300;
