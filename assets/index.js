@@ -102,22 +102,53 @@ async function initMap() {
   function buildSidebar(markerView, sidebar, institution) {
 
     if (markerView.content.classList.contains("highlight")) {
-      sidebar.innerHTML = `
-      <div class="${institution.type}-sidebar-details">
-        <div class="${institution.type}-header">
-          <img class="header-image" src="https://images.actiontourguide.com/wp-content/uploads/2023/12/16114522/Beautiful-aerial-view-of-downtown-Vancouver-skyline.jpg">
-          <div class="name">
-          <span>${institution.name}</span>
+
+      switch (institution.tags) {
+        case "School":
+          sidebar.innerHTML = `
+          <div class="sidebar-details">
+            <div class="sidebar-header">
+              <img class="header-image" src="https://images.actiontourguide.com/wp-content/uploads/2023/12/16114522/Beautiful-aerial-view-of-downtown-Vancouver-skyline.jpg">
+              <div class="name">
+                <span>${institution.name}</span>
+              </div>
+              <div class="tags">
+                <div class="tag"
+                  <span>${institution.tags}</span>
+                </div>
+              </div>
+              <div class="address">
+                <span>${institution.address}</span>
+              </div>
+            </div>
           </div>
-          <div class="type">
-          <span>${institution.designation}</span>
+          `;
+          break;
+
+        case "Industry Partner":
+          sidebar.innerHTML = `
+          <div class="sidebar-details">
+            <div class="sidebar-header">
+              <img class="header-image" src="https://images.actiontourguide.com/wp-content/uploads/2023/12/16114522/Beautiful-aerial-view-of-downtown-Vancouver-skyline.jpg">
+              <div class="name">
+                <span>${institution.name}</span>
+              </div>
+              <div class="tags">
+                <div class="tag"
+                  <span>${institution.tags}</span>
+                </div>
+              </div>
+              <div class="contact">
+                <span>Contact: <b>${institution.contact}</b></span>
+              </div>
+              <div class="address">
+                <span>${institution.address}</span>
+              </div>
+            </div>
           </div>
-          <div class="address">
-          <span>${institution.address}</span>
-          </div>
-        </div>
-      </div>
-      `;
+          `;
+          break;
+      }
     } else {
       sidebar.innerHTML = ``;
     }
@@ -126,7 +157,7 @@ async function initMap() {
   const schools = [
     {
       name: "Capilano Elementary School",
-      designation: "School",
+      tags: "School",
       type: "school",
       address: "1230 20th St W, North Vancouver, BC",
       district: "School District 44",
@@ -139,7 +170,7 @@ async function initMap() {
     },
     {
       name: "Highlands Elementary School",
-      designation: "School",
+      tags: "School",
       type: "school",
       address: "3150 Colwood Dr, North Vancouver, BC",
       district: "School District 44",
@@ -152,7 +183,7 @@ async function initMap() {
     },
     {
       name: "Larson Elementary School",
-      designation: "School",
+      tags: "School",
       type: "school",
       address: "2605 Larson Rd, North Vancouver, BC",
       district: "School District 44",
@@ -165,7 +196,7 @@ async function initMap() {
     },
     {
       name: "Westview Elementary School",
-      designation: "School",
+      tags: "School",
       type: "school",
       address: "641 17th Street West, North Vancouver, BC",
       district: "School District 44",
@@ -181,10 +212,11 @@ async function initMap() {
   const industryPartners = [
     {
       name: "Elk Valley Resources",
-      designation: "Industry Partner",
+      tags: "Industry Partner",
       type: "industry",
       address: "565 Michel Creek Rd, Sparwood, BC",
       programs: ["Program 1"],
+      contact: "Jay Weldon",
       position: {
         lat: 49.743664238353965,
         lng: -114.8768418788194
@@ -192,22 +224,23 @@ async function initMap() {
     },
     {
       name: "BC Wildlife Federation",
-      designation: "Industry Partner",
+      tags: "Industry Partner",
       type: "industry",
       address: "9706 188 St, Surrey, BC",
       programs: ["Program 1"],
+      contact: "Arielle Garsson",
       position: {
         lat: 49.178792439098864,
         lng: -122.70057571001746
-
       }
     },
     {
       name: "Entuitive Consulting",
-      designation: "Industry Partner",
+      tags: "Industry Partner",
       type: "industry",
       address: "1075 W Georgia St Suite 1020, Vancouver, BC",
       programs: ["Program 1"],
+      contact: "Juliette Mollard Thibault",
       position: {
         lat: 49.285945657851165,
         lng: -123.12216791846
@@ -215,10 +248,11 @@ async function initMap() {
     },
     {
       name: "Makers Making Change",
-      designation: "Industry Partner",
+      tags: "Industry Partner",
       type: "industry",
       address: "3999 Henning Dr #400, Burnaby, BC",
       programs: ["Program 1"],
+      contact: "",
       position: {
         lat: 49.2656145749895,
         lng: -123.01496378746197
@@ -226,10 +260,11 @@ async function initMap() {
     },
     {
       name: "Microsoft",
-      designation: "Industry Partner",
+      tags: "Industry Partner",
       type: "industry",
       address: "725 Granville St Suite 700 Vancouver, BC",
       programs: ["Program 1"],
+      contact: "Emma Gray",
       position: {
         lat: 49.282238504262544, 
         lng: -123.11960517823994
