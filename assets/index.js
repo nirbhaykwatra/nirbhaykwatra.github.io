@@ -48,6 +48,24 @@ async function initMap() {
         buildSidebar(IndustryMarker, sidebar, industry);
       });
     }
+
+    for (const postsec of postSecondary) {
+      const PostSecMarker = new google.maps.marker.AdvancedMarkerElement({
+        map,
+        content: buildContent(postsec),
+        position: postsec.position,
+        title: postsec.name,
+      });
+  
+      PostSecMarker.addListener("gmp-click", () => {
+        if (selectedMarker !== null && selectedMarker !== PostSecMarker) {
+          toggleHighlight(selectedMarker);
+          selectedMarker = PostSecMarker;
+        }
+        toggleHighlight(PostSecMarker);
+        buildSidebar(PostSecMarker, sidebar, postsec);
+      });
+    }
   }
   
   function toggleHighlight(markerView) {
@@ -97,6 +115,24 @@ async function initMap() {
       console.log(`Generated content for industry markers.`)
       return content;
     }
+
+    if (institution.type === "postsec") {
+      content.classList.add("postsec");
+      content.innerHTML = `
+      <div class="icon">
+          <i aria-hidden="true" class="fa fa-icon fa-building-columns" title="postsec"></i>
+          <span class="fa-sr-only">postsec</span>
+      </div>
+      <div class="details">
+          <div class="name">${institution.name}</div>
+          <div class="address">${institution.address}</div>
+      </div>
+      `;
+      console.log(`Generated content for postsec markers.`)
+      return content;
+    }
+
+    
   }
 
   function buildSidebar(markerView, sidebar, institution) {
@@ -148,6 +184,27 @@ async function initMap() {
           </div>
           `;
           break;
+
+          case "Post Secondary":
+            sidebar.innerHTML = `
+            <div class="sidebar-details">
+              <div class="sidebar-header">
+                <img class="header-image" src="https://images.actiontourguide.com/wp-content/uploads/2023/12/16114522/Beautiful-aerial-view-of-downtown-Vancouver-skyline.jpg">
+                <div class="name">
+                  <span>${institution.name}</span>
+                </div>
+                <div class="tags">
+                  <div class="tag"
+                    <span>${institution.tags}</span>
+                  </div>
+                </div>
+                <div class="address">
+                  <span>${institution.address}</span>
+                </div>
+              </div>
+            </div>
+            `;
+            break;
       }
     } else {
       sidebar.innerHTML = ``;
@@ -156,55 +213,55 @@ async function initMap() {
 
   const schools = [
     {
-      name: "Capilano Elementary School",
+      name: "Mountainside Secondary",
       tags: "School",
       type: "school",
-      address: "1230 20th St W, North Vancouver, BC",
+      address: "3365 Mahon Avenue North Vancouver BC",
       district: "School District 44",
       requests: ["Request 1", "Request 2"],
       programs: ["Program 1"],
       position: {
-        lat: 49.3280176,
-        lng: -123.1087725
+        lat: 49.34035303968323,
+        lng: -123.08051030146905
       }
     },
     {
-      name: "Highlands Elementary School",
+      name: "Handsworth Secondary",
       tags: "School",
       type: "school",
-      address: "3150 Colwood Dr, North Vancouver, BC",
+      address: "1033 Handsworth Road North Vancouver BC",
       district: "School District 44",
       requests: ["Request 1", "Request 2"],
       programs: ["Program 1"],
       position: {
-        lat: 49.3384867,
-        lng: -123.0975259
+        lat: 49.35242802064235,
+        lng: -123.10137877302783
       }
     },
     {
-      name: "Larson Elementary School",
+      name: "Carson Graham Secondary",
       tags: "School",
       type: "school",
-      address: "2605 Larson Rd, North Vancouver, BC",
+      address: "2145 Jones Avenue North Vancouver BC",
       district: "School District 44",
       requests: ["Request 1", "Request 2"],
       programs: ["Program 1"],
       position: {
-        lat: 49.3333691,
-        lng: -123.085248
+        lat: 49.329127965950505,
+        lng: -123.08180647510146
       }
     },
     {
-      name: "Westview Elementary School",
+      name: "Argyle Secondary",
       tags: "School",
       type: "school",
-      address: "641 17th Street West, North Vancouver, BC",
+      address: "1131 Frederick Road North Vancouver BC",
       district: "School District 44",
       requests: ["Request 1", "Request 2"],
       programs: ["Program 1"],
       position: {
-        lat: 49.3238414,
-        lng: -123.0894738
+        lat: 49.3416081277803,
+        lng: -123.04200298546256
       }
     }
   ]
@@ -270,6 +327,20 @@ async function initMap() {
         lng: -123.11960517823994
       }
     }
+  ]
+
+  const postSecondary = [
+    {
+      name: "Capilano University",
+      tags: "Post Secondary",
+      type: "postsec",
+      address: "2055 Purcell Way, North Vancouver, BC V7J 3H5",
+      programs: ["Program 1"],
+      position: {
+        lat: 49.32095962114928,
+        lng: -123.02201144509955
+      }
+    },
   ]
   
   initMap();
