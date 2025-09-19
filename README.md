@@ -25,7 +25,7 @@
   	- The Surfacing (Global Game Jam Vancouver 2025)
   		- Bubble Mechanic
   	   	- Character Movement
-	- Unearthed: Beneath The Spores
+	- Unearthed: Beneath The Spores (Quiver Games Guild Incubator 2025)
    		- Systems Design
        		- Player Health
            	- Damage (Fall damage, environmental damage)
@@ -42,13 +42,14 @@
 	- Creating interactive map served via static HTML, CSS and JS.
 	- Managing Route53 DNS records to redirect to different websites.
    	- Quantum 2048
+   		- Talk about what it was like to adopt a codebase from someone else.
    	- Quantum Catastrophe
 
 - Personal Projects [comprehensive breakdown]
 	- Fog of War
 	- Talia's Tavern
   	- LVS Bot
-	- Personal Website (go through the process of learning web dev, deciding on a framework, etc.)
+	- Personal Website (Made with Svelte, TypeScript and Tailwind CSS)
    	- SCP Director's Cut
 	- Scrounge up whatever you can find
 
