@@ -60,4 +60,5 @@
     - Each website immediately has a button to go to the other website.
  - Create a "Project Graveyard" section with all the abandoned/cryo-statis side projects
     - Talk about why you started the project, why you abandoned it and if it's something you would be interested in going back to.
+    - Sections: Name, What Is This?, Why Was It Born?, Why Did It Die?, Is It Gone Forever?
  - For game jam projects, show the code as it was during the jam and then show it after it was refactored. This will provide a lot of insight into your prototyping process and how you approach refinement afterwards.
